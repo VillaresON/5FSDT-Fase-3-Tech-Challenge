@@ -1,0 +1,53 @@
+li {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 10px 0;
+}
+
+.card {
+    width: 90%;
+    background: #700dd4;
+    background: linear-gradient(268deg, rgba(112, 13, 212, 0.61) 0%, rgba(226, 7, 250, 0.413) 0%, rgba(119, 43, 166, 0.4) 57%);
+    border-radius: 20px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card * {
+    display: flex;
+    align-items: center;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(65, 0, 125, 0.864);
+    color: white;
+    border-radius: 5px;
+}
+
+h1 {
+    background-color: #700dd4;
+    color: white;
+    border-radius: 10px;
+}
+
+h1,
+h5 {
+    margin: 5px !important;
+}
+
+.input {
+    width: 90%;
+    border-radius: 20px;
+    color: #700dd4;
+    border: 2px solid #700dd4 !important;
+    padding: 10px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+}
