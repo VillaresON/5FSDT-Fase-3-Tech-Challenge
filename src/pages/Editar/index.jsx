@@ -1,7 +1,8 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import styles from './Editar.module.css'
 
 import { useState, useEffect } from "react"
+import { ImExit } from 'react-icons/im';
 
 export default function Editar() {
     const { id } = useParams()
@@ -67,7 +68,6 @@ export default function Editar() {
     return (
         <div className={styles.divPrincipal}>
             <h2>Editar Post</h2>
-
             <form className={styles.formulario} onSubmit={handleSubmit}>
                 <div>
                     <label>Título</label>

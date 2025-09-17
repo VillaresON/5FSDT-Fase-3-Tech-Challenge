@@ -1,6 +1,7 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import styles from './Excluir.module.css'
 import { useState, useEffect } from "react"
+import { ImExit } from 'react-icons/im';
 
 export default function Excluir() {
     const { id } = useParams()
@@ -68,7 +69,6 @@ export default function Excluir() {
     return (
         <div className={styles.divPrincipal}>
             <h2>Visualizar Post</h2>
-
             <div className={styles.formulario}>
                 <div>
                     <label>Título</label>
