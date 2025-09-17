@@ -27,7 +27,7 @@ export default function Login() {
 
       const data = await res.json();
       login({ token: data.token, user: { email } });
-      navigate("/dashboard");
+      navigate("/");
     } catch (err) {
       setErro(err.message);
     }
