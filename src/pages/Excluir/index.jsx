@@ -59,7 +59,7 @@ export default function Excluir() {
             setShowModal(false)
 
             // Redirecionar após excluir
-            setTimeout(() => navigate("/"), 1500)
+            setTimeout(() => navigate("/editarPostagem"), 1500)
         } catch (err) {
             setMessage(err.message)
         }

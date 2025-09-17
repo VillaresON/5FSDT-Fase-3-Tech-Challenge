@@ -2,12 +2,13 @@ import styles from './NovaPostagem.module.css'
 
 import { useState, useEffect } from "react"
 import { FcPlus } from "react-icons/fc";
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function NovaPostagem() {
     const [dados, setDados] = useState([]);
     const [form, setForm] = useState({ titulo: "", conteudo: "", autor_id: "" })
     const [message, setMessage] = useState("")
+    const navigate = useNavigate()
 
     async function buscarDados(url) {
         try {
@@ -43,7 +44,7 @@ export default function NovaPostagem() {
             const data = await res.json()
             setMessage("Post criado com sucesso!")
             setForm({ titulo: "", conteudo: "", autor_id: "" })
-            setTimeout(() => Navigate("/"), 1500)
+            setTimeout(() => navigate("/"), 1500)
         } catch (err) {
             setMessage(err.message)
         }
@@ -91,7 +92,7 @@ export default function NovaPostagem() {
 
                 </div>
 
-                <button type="submit">Enviar</button>
+                <button type="submit">Criar</button>
             </form>
 
             {message && <p>{message}</p>}
