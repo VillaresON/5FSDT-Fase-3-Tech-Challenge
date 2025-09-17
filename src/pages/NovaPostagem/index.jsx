@@ -1,10 +1,12 @@
 import styles from './NovaPostagem.module.css'
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { FcPlus } from "react-icons/fc";
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from "../../context/AuthContext";
 
 export default function NovaPostagem() {
+    const { token } = useContext(AuthContext);
     const [dados, setDados] = useState([]);
     const [form, setForm] = useState({ titulo: "", conteudo: "", autor_id: "" })
     const [message, setMessage] = useState("")
@@ -35,7 +37,10 @@ export default function NovaPostagem() {
         try {
             const res = await fetch("http://localhost:3000/posts", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                },
                 body: JSON.stringify(form),
             })
 

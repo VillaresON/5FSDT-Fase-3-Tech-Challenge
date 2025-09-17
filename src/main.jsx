@@ -9,24 +9,33 @@ import NovaPostagem from './pages/NovaPostagem'
 import EditarPostagem from './pages/EditarPostagem'
 import Editar from './pages/Editar'
 import Excluir from './pages/Excluir'
+import { AuthProvider } from "./context/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Login from "./pages/login.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
+import Register from './pages/Register.jsx'
 
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-      <MenuLateral>
-        <Routes>
-          <Route path={"/"} element={<Inicio />} />
-          <Route path={"/post/:id"} element={<Post />} />
-          <Route path={"/editar/:id"} element={<Editar />} />
-          <Route path={"/excluir/:id"} element={<Excluir />} />
-          <Route path={"/novaPostagem/"} element={<NovaPostagem />} />
-          <Route path={"/editarPostagem/"} element={<EditarPostagem />} />
-          <Route path={"*"} element={<p>oi</p>} />
-        </Routes>
-      </MenuLateral>
-    </BrowserRouter>
-
+    <AuthProvider>
+      <BrowserRouter>
+        <MenuLateral>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+            <Route path={"/"} element={<Inicio />} />
+            <Route path={"/post/:id"} element={<Post />} />
+            <Route path={"/editar/:id"} element={<ProtectedRoute><Editar /></ProtectedRoute>} />
+            <Route path={"/excluir/:id"} element={<ProtectedRoute><Excluir /></ProtectedRoute>} />
+            <Route path={"/novaPostagem/"} element={<ProtectedRoute><NovaPostagem /></ProtectedRoute>} />
+            <Route path={"/editarPostagem/"} element={<ProtectedRoute><EditarPostagem /></ProtectedRoute>} />
+            <Route path={"*"} element={<p>oi</p>} />
+          </Routes>
+        </MenuLateral>
+      </BrowserRouter>
+    </AuthProvider>
   </StrictMode>,
 )
