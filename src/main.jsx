@@ -11,7 +11,7 @@ import Editar from './pages/Editar'
 import Excluir from './pages/Excluir'
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Login from "./pages/login.jsx";
+import Login from "./pages/Login";
 import Register from './pages/Register.jsx'
 
 

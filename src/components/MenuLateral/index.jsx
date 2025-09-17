@@ -5,6 +5,8 @@ import { FaPencilRuler } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import Header from '../Header';
+import { IoLogIn } from 'react-icons/io5';
+import { IoIosSave } from 'react-icons/io';
 
 
 export default function MenuLateral({ children }) {
@@ -17,20 +19,24 @@ export default function MenuLateral({ children }) {
                 {user && (
                     <ul className={styles.ul}>
                         <div>
-                            <Link to='/' className={location.pathname === '/' ? styles.active : ''}> <FcHome size={25} /> Início</Link>
-                            <Link to='/novaPostagem' className={location.pathname === '/novaPostagem' ? styles.active : ''}> <FcPlus size={25} />Nova Postagem</Link>
-                            <Link to='/editarPostagem' className={location.pathname === '/editarPostagem' ? styles.active : ''}> <FaPencilRuler color='yellow' size={25} />Editar Postagem</Link>
+                            <ul className={styles.ul}>
+                                <Link to='/' className={location.pathname === '/' ? styles.active : ''}> <FcHome size={25} /> Início</Link>
+                                <Link to='/novaPostagem' className={location.pathname === '/novaPostagem' ? styles.active : ''}> <FcPlus size={25} />Nova Postagem</Link>
+                                <Link to='/editarPostagem' className={location.pathname === '/editarPostagem' ? styles.active : ''}> <FaPencilRuler color='yellow' size={25} />Editar Postagem</Link>
+                            </ul>
                         </div>
                         <div>
-                            <Header />
+                            <ul className={styles.ul}>
+                                <Header />
+                            </ul>
                         </div>
                     </ul>
                 )}
                 {!user && (
                     <ul className={styles.ul}>
                         <Link to='/' className={location.pathname === '/' ? styles.active : ''}> <FcHome size={25} /> Início</Link>
-                        <Link to="/login">Login</Link>
-                        <Link to="/register">Registrar</Link>
+                        <Link to="/login" className={location.pathname === '/login' ? styles.active : ''} ><IoLogIn size={25} color='green' />Login</Link>
+                        <Link to="/register" className={location.pathname === '/register' ? styles.active : ''} > <IoIosSave size={25} color='#3285a8' /> Registrar</Link>
                     </ul>
                 )}
             </div>

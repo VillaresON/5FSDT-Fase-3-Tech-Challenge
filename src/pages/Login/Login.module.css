@@ -1,0 +1,41 @@
+.divPrincipal {
+    width: 600px;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.container label{
+    color: purple;
+}
+
+.container input{
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid purple;
+    outline: none;
+}
+
+.container button{
+    margin-top: 10px;
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px
+}
+
+.container button:hover{
+    cursor: pointer;
+    background-color: rgb(4, 163, 4);
+}
