@@ -7,6 +7,7 @@ import MenuLateral from './components/MenuLateral'
 import Post from './pages/Post'
 import NovaPostagem from './pages/NovaPostagem'
 import EditarPostagem from './pages/EditarPostagem'
+import Editar from './pages/Editar'
 
 
 
@@ -17,9 +18,10 @@ createRoot(document.getElementById('root')).render(
         <Routes>
           <Route path={"/"} element={<Inicio />} />
           <Route path={"/post/:id"} element={<Post />} />
+          <Route path={"/editar/:id"} element={<Editar />} />
           <Route path={"/novaPostagem/"} element={<NovaPostagem />} />
           <Route path={"/editarPostagem/"} element={<EditarPostagem />} />
-          <Route path={"*"} element={<h1 style={{ paddingLeft: 10 }}>Error 404, Página não encontrada!</h1>} />
+          <Route path={"*"} element={<p>oi</p>} />
         </Routes>
       </MenuLateral>
     </BrowserRouter>

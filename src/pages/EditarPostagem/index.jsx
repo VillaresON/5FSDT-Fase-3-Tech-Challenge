@@ -72,10 +72,10 @@ export default function Inicio() {
                                 <div className={styles.card}>
                                     <h1 className={styles.titulo}><FcDocument size={40} /> {item.titulo}
                                         <div>
-                                            <Link className={styles.botaoEditar} to={'/editar/:id'}>
+                                            <Link className={styles.botaoEditar} to={`/editar/${item.id}`}>
                                                 <FaPencilRuler color='yellow' /> Editar
                                             </Link>
-                                            <Link className={styles.botaoExcluir} to={'/excluir/:id'}>
+                                            <Link className={styles.botaoExcluir} to={`/excluir/${item.id}`}>
                                                 <RiDeleteBinFill color='red' /> Excluir
                                             </Link>
                                         </div>
