@@ -28,6 +28,13 @@
     gap: 10px;
     justify-content: space-between;
 }
+.separador {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-between;
+}
 
 a {
     color: #700dd4;

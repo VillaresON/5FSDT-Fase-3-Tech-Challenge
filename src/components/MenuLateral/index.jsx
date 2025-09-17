@@ -17,7 +17,7 @@ export default function MenuLateral({ children }) {
         <div className={styles.principal}>
             <div className={styles.menu}>
                 {user && (
-                    <ul className={styles.ul}>
+                    <ul className={styles.separador}>
                         <div>
                             <ul className={styles.ul}>
                                 <Link to='/' className={location.pathname === '/' ? styles.active : ''}> <FcHome size={25} /> Início</Link>
@@ -26,7 +26,7 @@ export default function MenuLateral({ children }) {
                             </ul>
                         </div>
                         <div>
-                            <ul className={styles.ul}>
+                            <ul className={styles.separador}>
                                 <Header />
                             </ul>
                         </div>
