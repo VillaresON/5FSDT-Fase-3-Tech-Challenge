@@ -1,8 +1,8 @@
-import styles from './NovaPostagem.module.css'
+import styles from './EditarPostagem.module.css'
 
 import { useState, useEffect } from "react"
 
-export default function NovaPostagem() {
+export default function EditarPostagem() {
     const [dados, setDados] = useState([]);
     const [form, setForm] = useState({ titulo: "", conteudo: "", autor_id: "" })
     const [message, setMessage] = useState("")

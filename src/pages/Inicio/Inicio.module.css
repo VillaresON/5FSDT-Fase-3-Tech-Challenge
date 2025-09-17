@@ -1,4 +1,6 @@
-
+.divPrincipal{
+    width: 100%;
+}
 li {
     list-style-type: none;
     display: flex;
@@ -7,7 +9,7 @@ li {
 }
 
 .card {
-    width: 90%;
+    width: 100%;
     background: #700dd4;
     background: linear-gradient(268deg, rgba(112, 13, 212, 0.61) 0%, rgba(226, 7, 250, 0.413) 0%, rgba(119, 43, 166, 0.4) 57%);
     border-radius: 20px;
@@ -42,7 +44,8 @@ h5 {
 }
 
 .input {
-    width: 90%;
+    margin-left: 2.5rem;
+    width: 500px !important;
     border-radius: 20px;
     color: #700dd4;
     border: 2px solid #700dd4 !important;
