@@ -15,17 +15,19 @@ export default function Register() {
     setSucesso(null);
 
     try {
-      const res = await fetch("http://localhost:3000/register", {
+      const res = await fetch("http://localhost:3000/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ nome, email, senha }),
       });
+      
       const data = await res.json();
 
       console.log(data)
       if (!res.ok) {
         throw new Error(data.error || "Erro ao registrar usuário");
       }
+
 
       setSucesso("Usuário registrado com sucesso!");
       // Redireciona para login após 1.5s
