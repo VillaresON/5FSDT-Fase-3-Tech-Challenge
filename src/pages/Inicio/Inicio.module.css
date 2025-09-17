@@ -1,3 +1,4 @@
+
 li {
     list-style-type: none;
     display: flex;
@@ -50,4 +51,13 @@ h5 {
 
 input[type="text"]:focus {
     outline: none;
+}
+
+.botaoConteudo{
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+    margin-left: 10px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.151);
+    color: green;
 }

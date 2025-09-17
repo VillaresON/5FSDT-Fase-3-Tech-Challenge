@@ -1,12 +1,12 @@
-.principal{
+.principal {
     display: flex;
 }
+
 .menu {
     width: 240px;
-    height: 100vh;
-    max-height: 100%;
     background: #700dd4;
     background: linear-gradient(179deg, rgba(112, 13, 212, 1) 0%, rgba(106, 3, 150, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    height: 100vh;
 }
 
 .ul {
@@ -34,7 +34,7 @@ a {
 
 }
 
-a:hover{
+a:hover {
     transform: translateX(4px);
 }
 
@@ -48,7 +48,7 @@ a:active {
     color: white;
 }
 
-.container{
+.container {
     width: 100%;
     margin: 10px;
 }

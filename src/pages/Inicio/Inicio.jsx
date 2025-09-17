@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 import styles from './inicio.module.css'
-import { FcAbout, FcReading, FcDocument, FcList } from "react-icons/fc";
+import { FcAbout, FcReading, FcDocument, FcList, FcRight } from "react-icons/fc";
+import { ImEnter } from "react-icons/im";
+
+import { Link } from 'react-router-dom';
 
 export default function Inicio() {
-    const [dados, setDados] = useState([]); 
-    const [carregando, setCarregando] = useState(false); 
-    const [erro, setErro] = useState(null); 
-    const [termoBusca, setTermoBusca] = useState(""); 
+    const [dados, setDados] = useState([]);
+    const [carregando, setCarregando] = useState(false);
+    const [erro, setErro] = useState(null);
+    const [termoBusca, setTermoBusca] = useState("");
 
     async function buscarDados(url) {
         try {
@@ -46,7 +49,7 @@ export default function Inicio() {
     }, [termoBusca]);
 
     return (
-        <div>
+        <div className={styles.divPrincipal} >
             <h2><FcList size={25} /> Lista de Postagens</h2>
 
             {/* Input de busca */}
@@ -67,8 +70,9 @@ export default function Inicio() {
                             <li key={item.id}>
                                 <div className={styles.card}>
                                     <h1><FcDocument size={40} /> {item.titulo}</h1>
-                                    <p><FcAbout size={25} /> {item.conteudo}</p>
-                                    <h5><FcReading size={25} /> {item.autor?.nome}</h5>
+                                    <p><FcAbout size={25} /> {item.conteudo.slice(0, 100)}...</p>
+                                    <Link className={styles.botaoConteudo} to={`/post/${item.id}`}> <ImEnter size={25} />Acessar Conteúdo</Link>
+                                    <h5><FcReading size={25} /> {item.autor.nome}</h5>
                                 </div>
                             </li>
                         ))
