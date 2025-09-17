@@ -1,6 +1,8 @@
 import styles from './NovaPostagem.module.css'
 
 import { useState, useEffect } from "react"
+import { FcPlus } from "react-icons/fc";
+import { Navigate } from 'react-router-dom';
 
 export default function NovaPostagem() {
     const [dados, setDados] = useState([]);
@@ -39,8 +41,9 @@ export default function NovaPostagem() {
             if (!res.ok) throw new Error("Erro ao enviar")
 
             const data = await res.json()
-            setMessage("Post criado com id: " + data.id)
+            setMessage("Post criado com sucesso!")
             setForm({ titulo: "", conteudo: "", autor_id: "" })
+            setTimeout(() => Navigate("/"), 1500)
         } catch (err) {
             setMessage(err.message)
         }
@@ -48,7 +51,7 @@ export default function NovaPostagem() {
 
     return (
         <div className={styles.divPrincipal}>
-            <h2>Criar Post</h2>
+            <h2><FcPlus size={35} />Criar Postagem</h2>
 
             <form className={styles.formulario} onSubmit={handleSubmit}>
                 <div>
