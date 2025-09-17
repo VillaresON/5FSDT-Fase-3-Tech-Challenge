@@ -1,96 +1,94 @@
 import styles from './EditarPostagem.module.css'
+import { useState, useEffect } from 'react';
+import { FcDocument, FcList } from "react-icons/fc";
+import { Link } from 'react-router-dom';
+import { FaPencilRuler } from "react-icons/fa";
+import { RiDeleteBinFill } from "react-icons/ri";
 
-import { useState, useEffect } from "react"
 
-export default function EditarPostagem() {
+export default function Inicio() {
     const [dados, setDados] = useState([]);
-    const [form, setForm] = useState({ titulo: "", conteudo: "", autor_id: "" })
-    const [message, setMessage] = useState("")
+    const [carregando, setCarregando] = useState(false);
+    const [erro, setErro] = useState(null);
+    const [termoBusca, setTermoBusca] = useState("");
 
     async function buscarDados(url) {
         try {
+            setCarregando(true);
+            setErro(null);
             const response = await fetch(url);
             if (!response.ok) {
                 throw new Error(`Erro HTTP: ${response.status}`);
             }
             const data = await response.json();
-            setDados(data);
+            // Garante que sempre seja array
+            setDados(Array.isArray(data) ? data : [data]);
         } catch (err) {
+            setErro(err);
             setDados([]);
+        } finally {
+            setCarregando(false);
         }
     }
 
     // Buscar todos inicialmente
     useEffect(() => {
-        buscarDados("http://localhost:3000/autores");
+        buscarDados("http://localhost:3000/posts/autores");
     }, []);
 
-    async function handleSubmit(e) {
-        e.preventDefault()
-        setMessage("")
+    // Buscar por filtro quando o termo mudar
+    useEffect(() => {
+        const delayDebounce = setTimeout(() => {
+            if (termoBusca.trim() !== "") {
+                buscarDados(`http://localhost:3000/posts/search/${encodeURIComponent(termoBusca)}`);
+            } else {
+                buscarDados("http://localhost:3000/posts/autores");
+            }
+        }, 1);
 
-        try {
-            const res = await fetch("http://localhost:3000/posts", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(form),
-            })
-
-            if (!res.ok) throw new Error("Erro ao enviar")
-
-            const data = await res.json()
-            setMessage("Post criado com id: " + data.id)
-            setForm({ titulo: "", conteudo: "", autor_id: "" })
-        } catch (err) {
-            setMessage(err.message)
-        }
-    }
+        return () => clearTimeout(delayDebounce);
+    }, [termoBusca]);
 
     return (
-        <div className={styles.divPrincipal}>
-            <h2>Criar Post</h2>
+        <div className={styles.divPrincipal} >
+            <h2><FcList size={25} /> Lista de Postagens</h2>
 
-            <form className={styles.formulario} onSubmit={handleSubmit}>
-                <div>
-                    <label>Título</label>
-                    <input
-                        autoComplete='off'
-                        required
-                        name="titulo"
-                        value={form.titulo}
-                        onChange={(e) => setForm({ ...form, titulo: e.target.value })}
-                    />
-                </div>
+            {/* Input de busca */}
+            <input
+                autoFocus
+                type="text"
+                placeholder="Buscar postagens..."
+                value={termoBusca}
+                onChange={(e) => setTermoBusca(e.target.value)}
+                className={styles.input}
+            />
 
-                <div>
-                    <label>Conteúdo</label>
-                    <textarea
-                        required
-                        name="conteudo"
-                        value={form.conteudo}
-                        onChange={(e) => setForm({ ...form, conteudo: e.target.value })}
-                    />
-                </div>
-                <div>
-                    <label>Autores</label>
-                    <select
-                        required
-                        value={form.autor_id}
-                        onChange={(e) => setForm({ ...form, autor_id: e.target.value })}
-                    >
-                        {dados.map((autor) => (
-                            <option key={autor.id} value={autor.id}>
-                                {autor.nome}
-                            </option>
-                        ))}
-                    </select>
 
-                </div>
+            <ul>
+                {!carregando && !erro && (
+                    dados.length > 0 ? (
+                        dados.map(item => (
+                            <li key={item.id}>
+                                <div className={styles.card}>
+                                    <h1 className={styles.titulo}><FcDocument size={40} /> {item.titulo}
+                                        <div>
+                                            <Link className={styles.botaoEditar} to={'/editar/:id'}>
+                                                <FaPencilRuler color='yellow' /> Editar
+                                            </Link>
+                                            <Link className={styles.botaoExcluir} to={'/excluir/:id'}>
+                                                <RiDeleteBinFill color='red' /> Excluir
+                                            </Link>
+                                        </div>
+                                    </h1>
 
-                <button type="submit">Enviar</button>
-            </form>
-
-            {message && <p>{message}</p>}
+                                </div>
+                            </li>
+                        ))
+                    ) : (
+                        <p>Nenhum resultado encontrado.</p>
+                    )
+                )}
+            </ul>
         </div>
-    )
+    );
 }

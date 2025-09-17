@@ -1,48 +1,85 @@
-.divPrincipal{
-    width: 
-    100%;
-}
-
-.formulario {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.formulario select,
-option {
+.divPrincipal {
     width: 100%;
-    margin-bottom: 10px;
 }
 
-textarea {
-    width: 150px;
-    height: 200px;
+li {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 10px 0;
 }
 
-.formulario input,
-textarea,
-select {
-    min-width: 99%;
-    margin: 0;
+.card {
+    width: 100%;
+    background: #700dd4;
+    background: linear-gradient(268deg, rgba(112, 13, 212, 0.61) 0%, rgba(226, 7, 250, 0.413) 0%, rgba(119, 43, 166, 0.4) 57%);
+    border-radius: 20px;
     padding: 5px;
-    outline: 0;
-    border: 1px solid rgb(81, 0, 128);
+    display: flex;
+}
+
+.card * {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 9px;
+    margin-right: 2px;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(65, 0, 125, 0.864);
+    color: white;
     border-radius: 5px;
 }
 
-.formulario button {
-    background-color: green !important;
-    border: 0;
-    padding: 20px;
-    border-radius: 20px;
-    font-size: 26px;
+h1 {
+    background-color: #700dd4;
     color: white;
-    font-weight: bold;
-    transition: 0.20s;
+    border-radius: 10px;
 }
 
-.formulario button:hover {
-    cursor: pointer;
-    background-color: rgb(2, 143, 2) !important;
+h1,
+h5 {
+    margin: 5px !important;
+}
+
+.input {
+    margin-left: 2.5rem;
+    width: 500px !important;
+    border-radius: 20px;
+    color: #700dd4;
+    border: 2px solid #700dd4 !important;
+    padding: 10px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+}
+
+.botaoConteudo {
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+    margin-left: 10px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.151);
+    color: green;
+}
+
+.botaoEditar {
+    width: 90px;
+    background-color: rgb(210, 194, 22) !important;
+    color: white;
+}
+
+.botaoExcluir {
+    width: 90px;
+    background-color: rgb(210, 22, 22) !important;
+    color: white;
+}
+
+.titulo {
+    width: 100%;
 }

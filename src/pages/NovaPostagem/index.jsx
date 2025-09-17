@@ -78,6 +78,7 @@ export default function NovaPostagem() {
                         value={form.autor_id}
                         onChange={(e) => setForm({ ...form, autor_id: e.target.value })}
                     >
+                        <option key='' value=''>Selecione um Autor</option>
                         {dados.map((autor) => (
                             <option key={autor.id} value={autor.id}>
                                 {autor.nome}
