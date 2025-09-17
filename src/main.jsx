@@ -12,7 +12,7 @@ import Excluir from './pages/Excluir'
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./pages/Login";
-import Register from './pages/Register.jsx'
+import Register from './pages/Register'
 
 
 

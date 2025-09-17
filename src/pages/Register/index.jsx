@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import styles from './Register.module.css'
+import { IoIosSave } from "react-icons/io";
 
 export default function Register() {
   const [nome, setNome] = useState("");
@@ -20,7 +22,7 @@ export default function Register() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ nome, email, senha }),
       });
-      
+
       const data = await res.json();
 
       if (!res.ok) {
@@ -37,34 +39,36 @@ export default function Register() {
   }
 
   return (
-    <div style={{ maxWidth: 400, margin: "3rem auto" }}>
-      <h2>Registrar Professor</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Nome</label>
-        <input
-          type="text"
-          value={nome}
-          onChange={(e) => setNome(e.target.value)}
-          required
-        />
+    <div className={styles.divPrincipal}>
+      <h2><IoIosSave size={25}/> Registrar Professor</h2>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <div className={styles.container}>
+          <label>Nome</label>
+          <input
+            type="text"
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
+            required
+          />
 
-        <label>Email</label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+          <label>Email</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
 
-        <label>Senha</label>
-        <input
-          type="password"
-          value={senha}
-          onChange={(e) => setSenha(e.target.value)}
-          required
-        />
+          <label>Senha</label>
+          <input
+            type="password"
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
+            required
+          />
 
-        <button type="submit">Registrar</button>
+          <button type="submit">Registrar</button>
+        </div>
       </form>
 
       {erro && <p style={{ color: "red" }}>{erro}</p>}
