@@ -17,7 +17,7 @@ export default function Header() {
     <header className={styles.divPrincipal} >
       <div><b>Bem-vindo,</b></div>
       <p>{user?.nome || user?.email}</p>
-        <button>
+        <button onClick={handleLogout}>
           <ImExit /> Logout
         </button>
     </header>

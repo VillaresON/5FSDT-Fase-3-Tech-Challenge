@@ -1,14 +1,15 @@
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import styles from './Editar.module.css'
+import { useNavigate } from 'react-router-dom';
 
 import { useState, useEffect } from "react"
-import { ImExit } from 'react-icons/im';
 
 export default function Editar() {
     const { id } = useParams()
     const [autores, setAutores] = useState([]);
     const [form, setForm] = useState({ titulo: "", conteudo: "", autor_id: "" })
     const [message, setMessage] = useState("")
+    const navigate = useNavigate()
 
     async function buscarAutores(url) {
         try {
@@ -60,6 +61,7 @@ export default function Editar() {
 
             const data = await res.json()
             setMessage("Post atualizado com sucesso!")
+            setTimeout(() => navigate("/"), 1500)
         } catch (err) {
             setMessage(err.message)
         }
