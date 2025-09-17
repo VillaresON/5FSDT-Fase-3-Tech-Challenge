@@ -13,8 +13,17 @@
 }
 
 .divPrincipal button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
     border: 0;
     background-color: red;
     color: white;
     border-radius: 5px;
+}
+
+.divPrincipal button:hover{
+    cursor: pointer;
+    background-color: rgb(236, 18, 18);
 }
