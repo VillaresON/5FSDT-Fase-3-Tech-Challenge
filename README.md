@@ -86,7 +86,7 @@ Plataforma onde professores podem postar suas aulas e transmitir conhecimento de
    docker pull villares/vite-react-tech-challenge:latest
 
    # Executar o container
-   docker run --name ViteReactTechChallenge -p 3000:3000 villares/vite-react-tech-challenge:latest
+   docker run --name ViteReactTechChallenge -p 5173:80 villares/vite-react-tech-challenge:latest
    ```
 
 
