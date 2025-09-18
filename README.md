@@ -62,6 +62,34 @@ Plataforma onde professores podem postar suas aulas e transmitir conhecimento de
    docker run --name TechChallenge -p 3000:3000 villares/tech-challenge:latest
    ```
 
+----------
+### FrontEnd
+----------
+
+1. **Clonar o repositório:**
+
+   ```bash
+   git clone https://github.com/VillaresON/5FSDT-Fase-3-Tech-Challenge.git
+   ```
+
+2. **Rodar a aplicação:**
+
+   ```bash
+   npm install
+   npm run dev
+   ```
+
+4. **(Opcional) Rodar com Docker:**
+
+   ```bash
+   # Baixando a imagem
+   docker pull villares/vite-react-tech-challenge:latest
+
+   # Executar o container
+   docker run --name ViteReactTechChallenge -p 3000:3000 villares/vite-react-tech-challenge:latest
+   ```
+
+
 ---
 
 ## 🏗️ 2. Arquitetura da Aplicação
@@ -72,6 +100,8 @@ O sistema é dividido em duas camadas principais:
 
 - **Backend:** Node.js + Express + Sequelize  
 - **Banco de Dados:** SQLite3
+- 
+- - **Frontend:** Vite + React  
 
 ---
 
@@ -80,12 +110,16 @@ O sistema é dividido em duas camadas principais:
 ```
 [Backend] ---> [API REST] ---> [Banco de Dados]
 ```
+```
+[Frontend] ---> [Backend] ---> [API REST] ---> [Banco de Dados]
+```
 
 ---
 
-### 2.3 Estrutura de Diretórios (Backend)
+### 2.3 Estrutura de Diretórios (Backend/Frontend)
 
 ```
+Backend
 /src
   ├── /controllers
   ├── /routes
@@ -95,11 +129,20 @@ O sistema é dividido em duas camadas principais:
   └── app.js
 server.js
 ```
+```
+Frontend
+  /src
+  ├── /assets
+  ├── /components
+  ├── /context
+  ├── /pages
+  └── main.jsx
+```
 
 ---
 
 ### 2.4 Tecnologias Utilizadas
-
+- Vite + React
 - Node.js
 - Express.js
 - Sequelize ORM
