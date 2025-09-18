@@ -1,6 +1,7 @@
-.divPrincipal{
+.divPrincipal {
     width: 100%;
 }
+
 li {
     list-style-type: none;
     display: flex;
@@ -44,23 +45,47 @@ h5 {
 }
 
 .input {
-    margin-left: 2.5rem;
+    margin-left: 1rem;
     width: 500px !important;
     border-radius: 20px;
     color: #700dd4;
     border: 2px solid #700dd4 !important;
-    padding: 10px;
+    height: 40px;
+    padding-left: 30px !important;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    box-sizing: border-box;
+
 }
 
 input[type="text"]:focus {
     outline: none;
 }
 
-.botaoConteudo{
+.botaoConteudo {
     display: flex;
     justify-content: space-around;
     width: 200px;
     margin-left: 10px;
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.151);
     color: green;
+}
+
+.mensagemResultado {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 15px;
+    font-style: italic;
+    font-weight: bold;
+    color: rgb(76, 0, 119);
+}
+
+.Search {
+    position: absolute;
+    top: 50%;
+    left: 22px;
+    transform: translateY(-50%);
+    color: #999;
 }

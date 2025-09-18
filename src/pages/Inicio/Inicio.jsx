@@ -4,6 +4,8 @@ import { FcAbout, FcReading, FcDocument, FcList, FcRight } from "react-icons/fc"
 import { ImEnter } from "react-icons/im";
 
 import { Link } from 'react-router-dom';
+import { FiAlertOctagon } from 'react-icons/fi';
+import { IoSearchOutline } from 'react-icons/io5';
 
 export default function Inicio() {
     const [dados, setDados] = useState([]);
@@ -52,16 +54,17 @@ export default function Inicio() {
         <div className={styles.divPrincipal} >
             <h2><FcList size={25} /> Lista de Postagens</h2>
 
-            {/* Input de busca */}
-            <input
-                autoFocus
-                type="text"
-                placeholder="Buscar postagens..."
-                value={termoBusca}
-                onChange={(e) => setTermoBusca(e.target.value)}
-                className={styles.input}
-            />
-
+            <div style={{ position: 'relative', display: 'inline-block' }}>
+                <input
+                    autoFocus
+                    type="text"
+                    placeholder="Buscar postagens..."
+                    value={termoBusca}
+                    onChange={(e) => setTermoBusca(e.target.value)}
+                    className={styles.input}
+                />
+                <IoSearchOutline size={25} className={styles.Search} />
+            </div>
 
             <ul>
                 {!carregando && !erro && (
@@ -77,7 +80,7 @@ export default function Inicio() {
                             </li>
                         ))
                     ) : (
-                        <p>Nenhum resultado encontrado.</p>
+                        <p className={styles.mensagemResultado}> <FiAlertOctagon size={25} /> Nenhum resultado encontrado.</p>
                     )
                 )}
             </ul>
