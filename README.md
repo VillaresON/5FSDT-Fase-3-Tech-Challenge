@@ -8,19 +8,28 @@ Plataforma onde professores podem postar suas aulas e transmitir conhecimento de
 ## 🧰 1. Setup Inicial
 
 ### 1.1 Requisitos do Sistema
-  [###BackEnd]
+----------
+### BackEnd
+----------
 - **Linguagem:** Node.js >= 18  
 - **Banco de Dados:** SQLite3  
 - **Requisitos adicionais:** Docker (opcional, mas recomendado)
+  
+----------
+### FrontEnd
+----------
 
-   [###FrontEnd]
 - **Linguagem:** React + Vite  
 - **Requisitos adicionais:** Docker (opcional, mas recomendado)
 
 ---
 
 ### 1.2 Instalação do Projeto
-  [###BackEnd]
+
+----------
+### BackEnd
+----------
+
 1. **Clonar o repositório:**
 
    ```bash
