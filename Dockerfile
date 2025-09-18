@@ -1,19 +1,15 @@
 # Etapa 1: Build
-FROM node:20-alpine AS build
+FROM node:20-slim AS build
 
 WORKDIR /app
 
-# Instalar pacotes nativos (caso alguma lib precise compilar)
-RUN apk add --no-cache python3 make g++
+# Instalar ferramentas básicas
+RUN apt-get update && apt-get install -y python3 make g++ && rm -rf /var/lib/apt/lists/*
 
-# Copiar dependências primeiro
 COPY package*.json ./
 RUN npm ci --legacy-peer-deps
 
-# Copiar código
 COPY . .
-
-# Rodar build do Vite
 RUN npm run build
 
 # Etapa 2: Servir com Nginx
