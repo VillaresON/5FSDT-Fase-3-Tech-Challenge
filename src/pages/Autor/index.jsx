@@ -29,7 +29,7 @@ export default function Autor() {
             if (!res.ok) throw new Error("Erro ao enviar")
 
                 
-            setMessage(<Mensagem>Autor Cadastrado Com Sucesso!! REDIRECIONANDO...</Mensagem>)
+            setMessage(<Mensagem>Autor Cadastrado Com Sucesso!</Mensagem>)
             setForm({ nome: ""})
             setTimeout(() => navigate("/"), 1500)
         } catch (err) {
