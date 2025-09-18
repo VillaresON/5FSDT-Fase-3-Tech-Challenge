@@ -100,8 +100,8 @@ O sistema é dividido em duas camadas principais:
 
 - **Backend:** Node.js + Express + Sequelize  
 - **Banco de Dados:** SQLite3
-- 
-- - **Frontend:** Vite + React  
+
+- **Frontend:** Vite + React  
 
 ---
 
