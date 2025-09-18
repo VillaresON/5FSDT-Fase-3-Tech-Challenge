@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
 import styles from './Editar.module.css'
 import { useNavigate } from 'react-router-dom';
-
 import { useState, useEffect } from "react"
+import Mensagem from '../../components/Mensagem'
 
 export default function Editar() {
     const { id } = useParams()
@@ -60,7 +60,7 @@ export default function Editar() {
             if (!res.ok) throw new Error("Erro ao atualizar")
 
             const data = await res.json()
-            setMessage("Post atualizado com sucesso!")
+            setMessage(<Mensagem>Postagem atualizada com sucesso!</Mensagem>)
             setTimeout(() => navigate("/"), 1500)
         } catch (err) {
             setMessage(err.message)

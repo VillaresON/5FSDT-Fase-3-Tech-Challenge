@@ -21,6 +21,7 @@ export default function MenuLateral({ children }) {
                         <div>
                             <ul className={styles.ul}>
                                 <Link to='/' className={location.pathname === '/' ? styles.active : ''}> <FcHome size={25} /> Início</Link>
+                                <Link to='/novoAutor' className={location.pathname === '/novoAutor' ? styles.active : ''}> <FcPlus size={25} />Novo Autor(a)</Link>
                                 <Link to='/novaPostagem' className={location.pathname === '/novaPostagem' ? styles.active : ''}> <FcPlus size={25} />Nova Postagem</Link>
                                 <Link to='/editarPostagem' className={location.pathname === '/editarPostagem' ? styles.active : ''}> <FaPencilRuler color='yellow' size={25} />Editar Postagem</Link>
                             </ul>

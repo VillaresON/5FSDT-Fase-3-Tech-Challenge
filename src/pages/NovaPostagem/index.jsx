@@ -4,6 +4,7 @@ import { useState, useEffect, useContext } from "react"
 import { FcPlus } from "react-icons/fc";
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from "../../context/AuthContext";
+import Mensagem from '../../components/Mensagem'
 
 export default function NovaPostagem() {
     const { token } = useContext(AuthContext);
@@ -47,7 +48,7 @@ export default function NovaPostagem() {
             if (!res.ok) throw new Error("Erro ao enviar")
 
             const data = await res.json()
-            setMessage("Post criado com sucesso!")
+            setMessage(<Mensagem>Postagem criada com sucesso!</Mensagem>)
             setForm({ titulo: "", conteudo: "", autor_id: "" })
             setTimeout(() => navigate("/"), 1500)
         } catch (err) {

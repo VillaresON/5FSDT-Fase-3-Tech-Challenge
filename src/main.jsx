@@ -13,6 +13,7 @@ import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./pages/Login";
 import Register from './pages/Register'
+import Autor from './pages/Autor'
 
 
 
@@ -28,6 +29,7 @@ createRoot(document.getElementById('root')).render(
             <Route path={"/editar/:id"} element={<ProtectedRoute><Editar /></ProtectedRoute>} />
             <Route path={"/excluir/:id"} element={<ProtectedRoute><Excluir /></ProtectedRoute>} />
             <Route path={"/novaPostagem/"} element={<ProtectedRoute><NovaPostagem /></ProtectedRoute>} />
+            <Route path={"/novoAutor/"} element={<ProtectedRoute><Autor /></ProtectedRoute>} />
             <Route path={"/editarPostagem/"} element={<ProtectedRoute><EditarPostagem /></ProtectedRoute>} />
             <Route path={"*"} element={<p>oi</p>} />
           </Routes>

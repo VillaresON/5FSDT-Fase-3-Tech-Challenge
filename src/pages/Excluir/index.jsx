@@ -1,7 +1,7 @@
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import styles from './Excluir.module.css'
 import { useState, useEffect } from "react"
-import { ImExit } from 'react-icons/im';
+import Mensagem from '../../components/Mensagem'
 
 export default function Excluir() {
     const { id } = useParams()
@@ -56,7 +56,7 @@ export default function Excluir() {
 
             if (!res.ok) throw new Error("Erro ao excluir")
 
-            setMessage("Post excluído com sucesso!")
+            setMessage(<Mensagem>Postagem excluída com sucesso!</Mensagem>)
             setShowModal(false)
 
             // Redirecionar após excluir
