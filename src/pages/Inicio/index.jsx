@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import styles from './inicio.module.css'
+import styles from './Inicio.module.css'
 import { FcAbout, FcReading, FcDocument, FcList, FcRight } from "react-icons/fc";
 import { ImEnter } from "react-icons/im";
 

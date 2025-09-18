@@ -1,7 +1,7 @@
 import 'normalize.css'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import Inicio from './pages/Inicio/Inicio'
+import Inicio from './pages/Inicio'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import MenuLateral from './components/MenuLateral'
 import Post from './pages/Post'
