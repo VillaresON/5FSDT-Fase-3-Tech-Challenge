@@ -1,10 +1,10 @@
 .divPrincipal {
-  width: 600px;
+  width: 800px;
   margin: 2rem auto;
   padding: 2rem;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -24,7 +24,15 @@ h2 {
   display: block;
 }
 
-.formulario input,
+.formulario input {
+  width: 97%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+
+}
+
 .formulario textarea,
 .formulario select {
   width: 100%;
@@ -39,7 +47,7 @@ h2 {
   min-height: 120px;
 }
 
-.formulario button{
+.formulario button {
   background: #029834;
   color: white;
   border: none;
@@ -53,4 +61,3 @@ h2 {
 .formulario button:hover {
   background: #05c746;
 }
-

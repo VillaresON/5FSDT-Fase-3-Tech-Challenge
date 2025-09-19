@@ -52,7 +52,7 @@ export default function Inicio() {
 
     return (
         <div className={styles.divPrincipal} >
-            <h2><FcList size={25} /> Lista de Postagens</h2>
+            <h2 className={styles.tituloPrincipal}><FcList size={25} /> Lista de Postagens</h2>
 
             <div style={{ position: 'relative', display: 'inline-block' }}>
                 <input
@@ -72,13 +72,15 @@ export default function Inicio() {
                         dados.map(item => (
                             <li key={item.id}>
                                 <div className={styles.card}>
-                                    <h1><FcDocument size={40} /> {item.titulo}</h1>
-                                    <FcAbout size={25} />
-                                    <div
-                                        dangerouslySetInnerHTML={{ __html: item.conteudo.replace(/<[^>]+>/g, "").substring(0, 100) + "..." }}
-                                    />
+                                    <h1 className={styles.tituloPostagem}><FcDocument size={40} /> {item.titulo}</h1>
+                                    <div className={styles.descricao}>
+                                        <FcAbout size={35} />
+                                        <div
+                                            dangerouslySetInnerHTML={{ __html: item.conteudo.replace(/<[^>]+>/g, "").substring(0, 300) + "..." }}
+                                        />
+                                    </div>
                                     <Link className={styles.botaoConteudo} to={`/post/${item.id}`}> <ImEnter size={25} />Acessar Conteúdo</Link>
-                                    <h5><FcReading size={25} /> {item.autor.nome}</h5>
+                                    <h5 className={styles.autorNome}><FcReading size={25} /> <b>Autor:</b>  {item.autor.nome}</h5>
                                 </div>
                             </li>
                         ))

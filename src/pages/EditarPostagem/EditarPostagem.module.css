@@ -12,13 +12,12 @@ li {
 }
 
 .card {
-    width: 100%; /* garante que nunca passe da tela */
-    max-width: 100%;
+    width: 80%; 
     background: linear-gradient(268deg, rgba(112, 13, 212, 0.61) 0%, rgba(226, 7, 250, 0.413) 0%, rgba(119, 43, 166, 0.4) 57%);
     border-radius: 20px;
     padding: 10px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     gap: 10px;
     box-sizing: border-box;
     overflow-wrap: break-word; /* quebra textos muito longos */
@@ -38,24 +37,26 @@ li {
  gap: 10px;
 }
 
-h2 {
+.tituloPrincipal {
     justify-content: center;
     background-color: rgba(65, 0, 125, 0.864);
     color: white;
     border-radius: 5px;
-    padding: 6px 12px;
     text-align: center;
 }
 
-h1 {
+.titulo {
     background-color: #700dd4;
     color: white;
     border-radius: 10px;
     padding: 8px 12px;
     text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
-h1,
+.titulo,
 h5 {
     margin: 5px !important;
 }

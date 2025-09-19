@@ -53,7 +53,7 @@ export default function Inicio() {
 
     return (
         <div className={styles.divPrincipal} >
-            <h2><FcList size={25} /> Lista de Postagens</h2>
+            <h2 className={styles.tituloPagina}><FcList size={25} /> Lista de Postagens</h2>
 
             <div style={{ position: 'relative', display: 'inline-block' }}>
                 <input

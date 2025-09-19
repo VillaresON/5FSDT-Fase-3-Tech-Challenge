@@ -15,7 +15,7 @@ export default function Header() {
 
   return (
     <header className={styles.divPrincipal} >
-      <div><b>Bem-vindo,</b></div>
+      <div><b>Logado como,</b></div>
       <p>{user?.nome || user?.email}</p>
         <button onClick={handleLogout}>
           <ImExit /> Logout
