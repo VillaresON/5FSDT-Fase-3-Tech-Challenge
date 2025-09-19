@@ -2,6 +2,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import styles from './Excluir.module.css'
 import { useState, useEffect } from "react"
 import Mensagem from '../../components/Mensagem'
+import { RiDeleteBin6Fill } from 'react-icons/ri';
 
 export default function Excluir() {
     const { id } = useParams()
@@ -68,7 +69,7 @@ export default function Excluir() {
 
     return (
         <div className={styles.divPrincipal}>
-            <h2>Visualizar Post</h2>
+            <h2><RiDeleteBin6Fill />Deletar Postagem</h2>
             <div className={styles.formulario}>
                 <div>
                     <label>Título</label>

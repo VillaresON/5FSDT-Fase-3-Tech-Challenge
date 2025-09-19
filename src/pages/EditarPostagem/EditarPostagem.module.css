@@ -12,7 +12,7 @@ li {
 }
 
 .card {
-    width: 80%; 
+    width: 80%;
     background: linear-gradient(268deg, rgba(112, 13, 212, 0.61) 0%, rgba(226, 7, 250, 0.413) 0%, rgba(119, 43, 166, 0.4) 57%);
     border-radius: 20px;
     padding: 10px;
@@ -20,21 +20,22 @@ li {
     align-items: center;
     gap: 10px;
     box-sizing: border-box;
-    overflow-wrap: break-word; /* quebra textos muito longos */
+    overflow-wrap: break-word;
+    /* quebra textos muito longos */
 }
 
 /* Removi o * global, para não forçar flex em tudo dentro do card */
-.card > * {
+.card>* {
     display: flex;
     justify-content: space-between;
     gap: 5px;
     margin: 0;
 }
 
-.card div{
- display: flex;
- flex-direction: column;
- gap: 10px;
+.card div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .tituloPrincipal {
@@ -63,8 +64,10 @@ h5 {
 
 .input {
     margin-left: 1rem;
-    width: 100%; /* não força largura fixa */
-    max-width: 500px; /* mantém limite no desktop */
+    width: 100%;
+    /* não força largura fixa */
+    max-width: 500px;
+    /* mantém limite no desktop */
     border-radius: 20px;
     color: #700dd4;
     border: 2px solid #700dd4 !important;
@@ -111,8 +114,17 @@ input[type="text"]:focus {
 
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
+    .Search {
+        position: absolute;
+        top: 50%;
+        left: 5px !important;
+        transform: translateY(-50%);
+        color: #999;
+    }
+
     li {
-        justify-content: center; /* centraliza no mobile */
+        justify-content: center;
+        /* centraliza no mobile */
     }
 
     .card {
@@ -138,7 +150,9 @@ input[type="text"]:focus {
         flex-wrap: wrap;
     }
 
-    h1, h2, h5 {
+    h1,
+    h2,
+    h5 {
         font-size: 1.2rem;
         text-align: center;
     }

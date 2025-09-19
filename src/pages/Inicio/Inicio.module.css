@@ -91,7 +91,7 @@ input[type="text"]:focus {
     color: #999;
 }
 
-.autorNome{
+.autorNome {
     background-color: rgba(0, 0, 0, 0.116);
     padding: 4px;
     border-radius: 5px;
@@ -99,28 +99,38 @@ input[type="text"]:focus {
     gap: 5px;
 }
 
-.descricao{
+.descricao {
     display: flex;
 }
 
-.descricao div{
+.descricao div {
     width: 70%
 }
 
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
+    .Search {
+        position: absolute;
+        top: 50%;
+        left: 5px !important;
+        transform: translateY(-50%);
+        color: #999;
+    }
+
     .card {
         padding: 15px;
     }
 
     .input {
-        width: 100% !important; /* ocupa toda largura no mobile */
+        width: 100% !important;
+        /* ocupa toda largura no mobile */
         margin-left: 0;
         font-size: 16px;
     }
 
     .botaoConteudo {
-        width: 100%; /* botão ocupa largura inteira */
+        width: 100%;
+        /* botão ocupa largura inteira */
         margin-left: 0;
         justify-content: center;
     }
@@ -136,4 +146,5 @@ input[type="text"]:focus {
         font-size: 1.2rem;
         text-align: center;
     }
+
 }
