@@ -5,6 +5,7 @@ import { FcPlus } from "react-icons/fc";
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from "../../context/AuthContext";
 import Mensagem from '../../components/Mensagem'
+import { Editor } from "@tinymce/tinymce-react"
 
 export default function NovaPostagem() {
     const { token } = useContext(AuthContext);
@@ -74,11 +75,17 @@ export default function NovaPostagem() {
 
                 <div>
                     <label>Conteúdo</label>
-                    <textarea
-                        required
-                        name="conteudo"
+                    <Editor
+                        apiKey="h2gkodfjriz7xmvqlm5nakg8hcitofdkcft4awxokaf361n2"
                         value={form.conteudo}
-                        onChange={(e) => setForm({ ...form, conteudo: e.target.value })}
+                        init={{
+                            height: 300,
+                            menubar: false,
+                            plugins: "lists link image code",
+                            toolbar:
+                                "undo redo | formatselect | bold italic | bullist numlist | link image | code",
+                        }}
+                        onEditorChange={(e) => setForm({ ...form, conteudo: e })}
                     />
                 </div>
                 <div>

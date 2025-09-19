@@ -73,7 +73,10 @@ export default function Inicio() {
                             <li key={item.id}>
                                 <div className={styles.card}>
                                     <h1><FcDocument size={40} /> {item.titulo}</h1>
-                                    <p><FcAbout size={25} /> {item.conteudo.slice(0, 100)}...</p>
+                                    <FcAbout size={25} />
+                                    <div
+                                        dangerouslySetInnerHTML={{ __html: item.conteudo.replace(/<[^>]+>/g, "").substring(0, 100) + "..." }}
+                                    />
                                     <Link className={styles.botaoConteudo} to={`/post/${item.id}`}> <ImEnter size={25} />Acessar Conteúdo</Link>
                                     <h5><FcReading size={25} /> {item.autor.nome}</h5>
                                 </div>

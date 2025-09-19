@@ -81,10 +81,8 @@ export default function Excluir() {
 
                 <div>
                     <label>Conteúdo</label>
-                    <textarea
-                        value={form.conteudo}
-                        readOnly
-                        disabled
+                    <div
+                        dangerouslySetInnerHTML={{ __html: form.conteudo }}
                     />
                 </div>
 

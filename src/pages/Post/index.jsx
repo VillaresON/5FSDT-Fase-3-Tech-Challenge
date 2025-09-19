@@ -47,7 +47,10 @@ export default function Post() {
                                     <div className={styles.autor}>
                                         <p><b>Autor(a) - </b> {item.autor.nome}</p>
                                     </div>
-                                    <p className={styles.conteudo}> {item.conteudo} </p>
+                                    <div
+                                        
+                                        dangerouslySetInnerHTML={ {__html: item.conteudo}}
+                                    />
                                 </div>
                             </li>
                         ))

@@ -29,7 +29,6 @@ export default function Register() {
         throw new Error(data.error || "Erro ao registrar usuário");
       }
 
-
       setSucesso("Usuário registrado com sucesso!");
       // Redireciona para login após 1.5s
       setTimeout(() => navigate("/login"), 1500);
