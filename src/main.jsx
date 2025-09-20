@@ -1,5 +1,4 @@
 import 'normalize.css'
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import Inicio from './pages/Inicio'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
@@ -14,8 +13,6 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./pages/Login";
 import Register from './pages/Register'
 import Autor from './pages/Autor'
-
-
 
 createRoot(document.getElementById('root')).render(
     <AuthProvider>
