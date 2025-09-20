@@ -31,7 +31,7 @@ createRoot(document.getElementById('root')).render(
             <Route path={"/novaPostagem/"} element={<ProtectedRoute><NovaPostagem /></ProtectedRoute>} />
             <Route path={"/novoAutor/"} element={<ProtectedRoute><Autor /></ProtectedRoute>} />
             <Route path={"/editarPostagem/"} element={<ProtectedRoute><EditarPostagem /></ProtectedRoute>} />
-            <Route path={"*"} element={<p>oi</p>} />
+            <Route path={"*"} element={<p>Error 404, Página não encontrada!</p>} />
           </Routes>
         </MenuLateral>
       </BrowserRouter>
